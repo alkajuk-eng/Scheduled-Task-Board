@@ -1,0 +1,17 @@
+.columns{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 33.33%;
+  /* background-color: greenyellow; */
+  margin: 40px;
+}
+
+.hdStatus{
+  display: flex;
+  text-align: center;
+}
+.statusImgClass{
+  width: 40px;
+  margin-left: 10px;
+}
