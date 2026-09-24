@@ -8,10 +8,20 @@ import InProgress from "./Images/inprogress.png";
 import Completed from "./Images/Completed.png";
 
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+const prevJobs=localStorage.getItem('job')
+console.log('prevJobprev:',prevJobs)
 
 function App() {
-  const [job, setJob] = useState([]);
+
+  const initialJobState=prevJobs?JSON.parse(prevJobs):[]
+
+  const [job, setJob] = useState(initialJobState);
+
+  useEffect(()=>{
+    localStorage.setItem('job',JSON.stringify(job))
+  },[job])
 
   const callDeleteJob=(uqueNumber)=>{
     const filtredJobs=job.filter((item,index)=>index!==uqueNumber)
